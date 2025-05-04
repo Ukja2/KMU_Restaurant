@@ -2,6 +2,7 @@ package com.example.restaurant_review.controller;
 
 
 import com.example.restaurant_review.domain.User;
+import com.example.restaurant_review.dto.UserUpdateRequest;
 import com.example.restaurant_review.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,5 +41,13 @@ public class UserController {
     //@PathVariable로 URL 경로의 값을 자바 변수로 연결
     public void deleteUser(@PathVariable Long id){
         userService.deleteById(id);
+    }
+
+    //유저 이메일, 닉네임 변경
+    @PutMapping("/{id}")
+    public User updateUser(
+            @PathVariable Long id,
+            @RequestBody UserUpdateRequest requestDto){
+        return userService.updateUser(id, requestDto);
     }
 }

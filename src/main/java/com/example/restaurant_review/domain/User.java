@@ -4,10 +4,12 @@ package com.example.restaurant_review.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity //DB 테이블과 연결된 객체(entity)임을 의미
 @Table(name = "user")
 @Getter
+@Setter
 @NoArgsConstructor //기본 생성자 자동 생성
 public class User {
 
