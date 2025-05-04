@@ -35,4 +35,10 @@ public class UserController {
     public User getUserId(@PathVariable Long id){
         return userService.findById(id);
     }
+
+    @DeleteMapping("/{id}")
+    //@PathVariable로 URL 경로의 값을 자바 변수로 연결
+    public void deleteUser(@PathVariable Long id){
+        userService.deleteById(id);
+    }
 }
