@@ -6,6 +6,8 @@ import com.example.restaurant_review.domain.User;
 import com.example.restaurant_review.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class UserService {
@@ -19,5 +21,11 @@ public class UserService {
     public User save(User user){
         return userRepository.save(user);
     }
+
+
+    public List<User> findAll(){
+        return userRepository.findAll();
+    }
+
 
 }
