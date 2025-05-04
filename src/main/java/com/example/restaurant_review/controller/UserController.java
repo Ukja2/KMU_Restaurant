@@ -29,4 +29,10 @@ public class UserController {
     public List<User> getAllUsers(){
         return userService.findAll();
     }
+
+    //특정 ID의 유저 반환
+    @GetMapping("/{id}")
+    public User getUserId(@PathVariable Long id){
+        return userService.findById(id);
+    }
 }
